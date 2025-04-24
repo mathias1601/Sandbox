@@ -1,4 +1,3 @@
-import React from 'react'
 import { useEffect, useState } from 'react'
 import { Card } from "react-bootstrap";
 import { FaGithub } from "react-icons/fa";

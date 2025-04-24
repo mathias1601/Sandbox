@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+/* import { useState } from 'react'
 import addition from "../assets/addition.png"
 import subtraction from "../assets/subtraction.png"
 import multiplication from "../assets/multiplication.png"
@@ -38,4 +38,4 @@ function SimpleMathGame() {
   )
 }
 
-export default SimpleMathGame
+export default SimpleMathGame */

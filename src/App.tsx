@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { BrowserRouter, href, Navigate, NavLink, Route, Routes, useNavigate } from 'react-router-dom';
+import { Navigate, NavLink, Route, Routes} from 'react-router-dom';
 import './App.css'
 import './css/navbar.css' 
 import CV from './Pages/CV';
@@ -11,7 +10,7 @@ import NumberMemory from './Pages/NumberMemory';
 import Trivia from './Pages/Trivia';
 import sandboxIcon from './assets/sandbox_icon.png';
 import "@fontsource/lexend-deca";
-import { Button, ButtonGroup, Dropdown } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 import Games from './Pages/Games';
 
 function App() {

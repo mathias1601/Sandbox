@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { GiConsoleController } from 'react-icons/gi';
+import { useEffect, useRef, useState } from 'react'
 
 function NumberMemory() {
   // State to track the current screen of the game

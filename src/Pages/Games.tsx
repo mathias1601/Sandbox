@@ -1,4 +1,3 @@
-import React from 'react'
 import numberMemory_banner from '../assets/numberMemory_banner.jpg'
 import wordMemory_banner from '../assets/wordMemory_banner.jpg'
 import trivia_banner from '../assets/trivia_banner.jpg'
