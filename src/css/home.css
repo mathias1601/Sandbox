@@ -1,0 +1,10 @@
+.intro-container {
+    margin-top: 5%;
+}
+
+.introText {
+    max-width: 50%;
+    left: 25%;
+    align-items: center;
+    position: relative;
+}

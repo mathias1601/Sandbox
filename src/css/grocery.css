@@ -1,0 +1,9 @@
+.foodSection {
+    display: flex;
+    flex-grow: 1;
+}
+
+.foodSection>div {
+    flex: 1;
+    padding: 20px;
+}

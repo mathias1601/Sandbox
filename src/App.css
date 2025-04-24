@@ -1,0 +1,80 @@
+.main {
+  margin-top: 5%;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #F5EEDC;
+
+}
+
+body {
+  background-color: #F5EEDC;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+
+.custom-dropdown {
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 10px 50px;
+  transition: border-bottom 0.5s ease;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.custom-dropdown:hover {
+  border-bottom: 2px solid white;
+}
+
+.custom-dropdown-button {
+  border: none;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom 0.5s ease;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.custom-dropdown-toggle {
+  color: white;
+  background-color: transparent;
+  border-style: none;
+}
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

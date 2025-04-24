@@ -1,0 +1,8 @@
+.mathSymbolsContainer {
+    display: flex;
+}
+
+.mathSymbols {
+    width: 25px;
+    display: inline;
+}

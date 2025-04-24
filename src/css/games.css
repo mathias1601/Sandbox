@@ -1,0 +1,25 @@
+.games_display_banner {
+    width: 60%;
+    align-items: center;
+    display: inline-block;
+    position: relative;
+    flex-direction: column;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    transition: transform .2s;
+}
+
+.games_display {
+    display: flex;
+    padding: 25px;
+}
+
+.games_banner {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.games_display_banner:hover {
+    transform: scale(1.1);
+}
