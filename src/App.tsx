@@ -1,4 +1,4 @@
-import { Navigate, NavLink, Route, Routes} from 'react-router-dom';
+import { Link, Navigate, NavLink, Route, Routes} from 'react-router-dom';
 import './App.css'
 import './css/navbar.css' 
 import CV from './Pages/CV';
@@ -47,14 +47,14 @@ function App() {
             
             <div className='custom-dropdown'>
               <Dropdown>
-              <a href='/Games' className='custom-dropdown-button'>Games</a>
-              <Dropdown.Toggle className='custom-dropdown-toggle' />
+                <NavLink to='/Games' className='custom-dropdown-button'>Games</NavLink>
+                <Dropdown.Toggle className='custom-dropdown-toggle' />
 
-              <Dropdown.Menu>
-                <Dropdown.Item href="/MemorizeWordGame">Word memory</Dropdown.Item>
-                <Dropdown.Item href="/NumberMemory">Number memory</Dropdown.Item>
-                <Dropdown.Item href="/Trivia">Trivia</Dropdown.Item>
-              </Dropdown.Menu>
+                <Dropdown.Menu>
+                  <Dropdown.Item as={NavLink} to="/MemorizeWordGame">Word memory</Dropdown.Item>
+                  <Dropdown.Item as={NavLink} to="/NumberMemory">Number memory</Dropdown.Item>
+                  <Dropdown.Item as={NavLink} to="/Trivia">Trivia</Dropdown.Item>
+                </Dropdown.Menu>
               </Dropdown>
             </div>
 
@@ -62,7 +62,7 @@ function App() {
 
       </div>
         <Routes>
-          <Route path="/" element={<Navigate to="/Home" />} />
+          <Route path="/Sandbox" element={<Navigate to="/Home" />} />
           <Route path="/Home" element={<div className='main'><Home /></div>} />
           <Route path="/CV" element={<div className='main'><CV /></div>} />
           <Route path="/Projects" element={<div className='main'><Projects /></div>} />
