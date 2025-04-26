@@ -26,6 +26,16 @@
     padding: 20px;
 }
 
+@media (max-width: 900px) {
+    .segment {
+        display: block;
+    }
+
+    .segment>div {
+        padding: 20px;
+    }
+}
+
 .info {
     text-align: left;
     padding: 7px;

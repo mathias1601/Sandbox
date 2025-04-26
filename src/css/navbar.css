@@ -2,8 +2,8 @@
 
 .custom-navbar-button {
     border: none;
-    border-bottom: 3px solid transparent;
-    padding: 10px 50px;
+    border-bottom: 0.188rem solid transparent;
+    padding: 0.625rem 3.125rem;
     transition: border-bottom 0.5s ease;
     background-color: transparent;
     color: white;
@@ -28,13 +28,11 @@
     border-bottom: 2px solid white;
 }
 
-/* Overriding Bootstrap Card styles */
 .custom-card {
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Example of customizing the navbar */
 .custom-navbar {
     display: flex;
     justify-content: space-between;
@@ -46,7 +44,7 @@
     width: 100%;
     color: white;
     position: fixed;
-    padding: 25px;
+    padding: 1.563rem;
     z-index: 1;
 }
 
@@ -56,4 +54,34 @@
 
 .custom-navbar .navbar-nav .nav-link:hover {
     color: #ddd;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Responsive behavior */
+@media (max-width: 900px) {
+    .button-container {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        background: gray;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+        box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+    }
+
+    .button-container.open {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
 }
