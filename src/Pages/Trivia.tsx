@@ -19,6 +19,14 @@ function Trivia() {
 
     const [allAnswers, setAllAnswers] = useState<any[]>([]);
 
+    let apiUrl: string
+
+    if (process.env.NODE_ENV != 'development') {    
+        apiUrl = `https://the-trivia-api.com/api/questions?amount=${numQuestions}`;
+    }
+    else {
+        apiUrl = `/trivia/api/questions?amount=${numQuestions}`;
+    }
 
     useEffect(() => {
         if (guessedAnswer !== undefined) {
@@ -55,7 +63,6 @@ function Trivia() {
     // Function for fetching trivia from API
     const fetchTriviaData = async () => {
         setIsLoading(true)
-        let apiUrl = `/trivia/api/questions?amount=${numQuestions}`;
 
         if (difficulty != "") {
             apiUrl += `&difficulty=${difficulty}`;

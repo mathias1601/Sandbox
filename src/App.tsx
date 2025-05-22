@@ -1,4 +1,4 @@
-import { Navigate, NavLink, Route, Routes} from 'react-router-dom';
+import { Navigate, Route, Routes} from 'react-router-dom';
 import './App.css'
 import './css/navbar.css' 
 import CV from './Pages/CV';
@@ -8,9 +8,7 @@ import MemorizeWordGame from './Pages/MemorizeWordGame';
 import GroceryGuessr from './Pages/GroceryGuessr';
 import NumberMemory from './Pages/NumberMemory';
 import Trivia from './Pages/Trivia';
-import sandboxIcon from './assets/sandbox_icon.png';
 import "@fontsource/lexend-deca";
-import { Dropdown } from 'react-bootstrap';
 import Games from './Pages/Games';
 import Navbar from './components/Navbar';
 

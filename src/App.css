@@ -24,18 +24,11 @@ body {
 
 
 .custom-dropdown {
-  border: none;
-  border-bottom: 3px solid transparent;
-  padding: 10px 50px;
-  transition: border-bottom 0.5s ease;
-  background-color: transparent;
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
+  display: flex;
 }
 
-.custom-dropdown:hover {
-  border-bottom: 2px solid white;
+.dropdown-arrow {
+  padding-top: 10px;
 }
 
 .custom-dropdown-button {

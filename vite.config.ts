@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   base: '/Sandbox/',
   server: {
-    proxy: {
+    proxy: process.env.NODE_ENV === 'development' ? {
       "/randomwords": {
         target: "https://random-word-api.herokuapp.com",
         changeOrigin: true,
@@ -17,7 +17,7 @@ export default defineConfig({
         secure: false,
         rewrite: (path) => path.replace(/^\/trivia/, ""),  // Remove "/trivia" prefix
       },
-    },
+    } : {}
   },
   plugins: [react()],
 });

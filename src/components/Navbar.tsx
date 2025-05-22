@@ -40,16 +40,21 @@ function Navbar() {
           Projects
         </NavLink>
 
-        <div className="custom-dropdown">
-          <Dropdown>
-            <NavLink to='/Games' className='custom-dropdown-button'>Games</NavLink>
-            <Dropdown.Toggle className='custom-dropdown-toggle' />
-            <Dropdown.Menu>
-              <Dropdown.Item as={NavLink} to="/MemorizeWordGame">Word memory</Dropdown.Item>
-              <Dropdown.Item as={NavLink} to="/NumberMemory">Number memory</Dropdown.Item>
-              <Dropdown.Item as={NavLink} to="/Trivia">Trivia</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+        <div className='custom-dropdown'>
+            <NavLink to='/Games' className={({ isActive }) => isActive ? "custom-navbar-button active-button" : "custom-navbar-button"}>
+            Games
+            </NavLink>
+
+            <div className='dropdown-arrow'>
+                <Dropdown>
+                    <Dropdown.Toggle className='custom-dropdown-toggle' />
+                    <Dropdown.Menu>
+                    <Dropdown.Item as={NavLink} to="/MemorizeWordGame">Word memory</Dropdown.Item>
+                    <Dropdown.Item as={NavLink} to="/NumberMemory">Number memory</Dropdown.Item>
+                    <Dropdown.Item as={NavLink} to="/Trivia">Trivia</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+            </div>
         </div>
       </div>
     </div>
