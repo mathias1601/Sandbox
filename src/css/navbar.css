@@ -46,6 +46,11 @@
     position: fixed;
     padding: 1.563rem;
     z-index: 1;
+    pointer-events: none;
+}
+
+.custom-navbar * {
+    pointer-events: auto;
 }
 
 .custom-navbar .navbar-nav .nav-link {

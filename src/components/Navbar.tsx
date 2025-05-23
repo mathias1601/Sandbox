@@ -1,4 +1,4 @@
-import { useState } from 'react'; 
+import { useEffect, useRef, useState } from 'react'; 
 import { NavLink} from 'react-router-dom';
 import '../css/navbar.css' 
 import sandboxIcon from '../assets/sandbox_icon.png';
@@ -7,9 +7,23 @@ import { Dropdown } from 'react-bootstrap';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  let menuRef : any = useRef(null);
+
+  useEffect(() => {
+
+    let handler = (e: any) => {
+      if (menuRef.current != null && !menuRef.current.contains(e.target)) {
+        setMenuOpen(false)        
+      }
+
+    }
+
+    document.addEventListener("mousedown", handler);
+  })
+
 
   return (
-    <div className="custom-navbar">
+    <div className="custom-navbar" ref={menuRef}>
       <h1>
         <img width={50} src={sandboxIcon} alt="" />
       </h1>
