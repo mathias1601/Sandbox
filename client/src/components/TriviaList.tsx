@@ -13,7 +13,7 @@ function TriviaList() {
   const [difficulty, setDifficulty] = useState("easy");
 
   useEffect(() => {
-    fetch(`http://localhost:5050/users/${difficulty}`)
+    fetch(`https://sandbox-kmnc.onrender.com/users/${difficulty}`)
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.error("Failed to fetch users", err));
