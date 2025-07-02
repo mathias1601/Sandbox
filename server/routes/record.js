@@ -36,7 +36,7 @@ router.post("/", async (req, res) => {
         let newDocument = {
             name: req.body.name, 
             score: req.body.score,
-            difficulty: req.body.difficulty
+            difficulty: req.body.dif
         };
         let collection = await db.collection("Users");
         let result = await collection.insertOne(newDocument);
