@@ -74,7 +74,7 @@ function Trivia() {
     };
 
     try {
-        const response = await fetch("http://localhost:5050/users", {
+        const response = await fetch(`https://sandbox-kmnc.onrender.com/users/`, {
 					method: "POST",
 					headers: {
 							"Content-Type": "application/json"
