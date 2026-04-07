@@ -23,11 +23,18 @@ function GithubRepo() {
         .then(
             (result) => {
                 const list = result.map((item: any) => (
-                    <div className='display_banner' key={item.name}>
-                        <img className='banner' src={repoImages[item.name]} alt="No banner" />
-                        <a className='github_btn' href={item.svn_url}>
-                            <FaGithub />
-                        </a>
+                    <div key={item.name}>
+                        {repoImages[item.name] ? (
+                            <div  className='display_banner' >
+                                <img className='banner' src={repoImages[item.name]} alt="No banner" />
+                                <a className='github_btn' href={item.svn_url}>
+                                    <FaGithub />
+                                </a>
+                            </div>
+                        ) : (
+                            <a href={item.svn_url}>{item.name}</a>
+                        )}
+                       
                     </div>
                 ))
                 setRepoData(list)
