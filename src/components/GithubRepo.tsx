@@ -59,8 +59,8 @@ function GithubRepo() {
   return   (
     <>
     <div className='display'>
-        <div>
-            <Card style= {{width: "18rem"}} >
+        <div className='github_card'>
+            <Card style= {{width: "75%"}} >
                 <Card.Img variant="top" src={avatarUrl}/>
                 <h1>{githubName}</h1>
                 <Card.Text>

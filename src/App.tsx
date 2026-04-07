@@ -1,4 +1,4 @@
-import { Navigate, NavLink, Route, Routes} from 'react-router-dom';
+import { Navigate, Route, Routes} from 'react-router-dom';
 import './App.css'
 import './css/navbar.css' 
 import CV from './Pages/CV';
@@ -8,58 +8,16 @@ import MemorizeWordGame from './Pages/MemorizeWordGame';
 import GroceryGuessr from './Pages/GroceryGuessr';
 import NumberMemory from './Pages/NumberMemory';
 import Trivia from './Pages/Trivia';
-import sandboxIcon from './assets/sandbox_icon.png';
 import "@fontsource/lexend-deca";
-import { Dropdown } from 'react-bootstrap';
 import Games from './Pages/Games';
+import Navbar from './components/Navbar';
 
 function App() {
 
   return (
     <>
-      <div className="custom-navbar">
-        <h1>
-            <img width={50} src={sandboxIcon}alt="" />
-        </h1>
-        <div className='button-container'>
-        
-            <NavLink
-              to="/Home"
-              className={({ isActive }) => isActive ? "custom-navbar-button active-button" : "custom-navbar-button"}
-              >
-              Home
-            </NavLink>
-
-            <NavLink
-              to="/CV"
-              className={({ isActive }) => isActive ? "custom-navbar-button active-button" : "custom-navbar-button"}
-              >
-              CV
-            </NavLink>
-
-            <NavLink
-              to="/Projects"
-              className={({ isActive }) => isActive ? "custom-navbar-button active-button" : "custom-navbar-button"}
-              >
-              Projects
-            </NavLink>
-
-            
-            <div className='custom-dropdown'>
-              <Dropdown>
-              <a href='/Games' className='custom-dropdown-button'>Games</a>
-              <Dropdown.Toggle className='custom-dropdown-toggle' />
-
-              <Dropdown.Menu>
-                <Dropdown.Item href="/MemorizeWordGame">Word memory</Dropdown.Item>
-                <Dropdown.Item href="/NumberMemory">Number memory</Dropdown.Item>
-                <Dropdown.Item href="/Trivia">Trivia</Dropdown.Item>
-              </Dropdown.Menu>
-              </Dropdown>
-            </div>
-
-        </div>
-
+      <div>
+        <Navbar />
       </div>
         <Routes>
           <Route path="/" element={<Navigate to="/Home" />} />

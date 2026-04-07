@@ -1,10 +1,19 @@
-import {useEffect, useState } from "react";
+import {useEffect, useRef, useState } from "react";
 import '../App.css'
 import axios from 'axios'
 
 
 function MemorizeWordGame() {
-    // State to track the current screen of the game
+    
+    let apiUrl: string
+
+    if (process.env.NODE_ENV != 'development') {    
+        apiUrl = `https://random-word-api.herokuapp.com/word?number=`;
+    }
+    else {
+        apiUrl = '/randomwords/word?number=';
+    }
+
     let numWords = 1
     
     const [APIdown, setAPIdown] = useState(false);
@@ -13,7 +22,7 @@ function MemorizeWordGame() {
     const [screen, setScreen] = useState<number>(0);
     const [words, setWords] = useState<string[]>([]);
     const [input, setInput] = useState<string>("");
-    const [apiLink, setApiLink] = useState<string>('/randomwords/word?number=' + numWords);
+    const [apiLink, setApiLink] = useState<string>(apiUrl + numWords);
 
     const [wordsVisibility, setWordsVisibility] = useState(true); // Keeps track of the visibility of the words 
 
@@ -44,7 +53,7 @@ function MemorizeWordGame() {
             if (level % 3 == 0) {
                 console.log("check")
                 numWords += 1
-                setApiLink('/randomwords/word?number=' + numWords)
+                setApiLink(apiUrl + numWords)
             }
         }
 
@@ -58,7 +67,7 @@ function MemorizeWordGame() {
         setScreen(0) 
         setLevel(0)
         numWords = 1
-        setApiLink('/randomwords/word?number=' + numWords)
+        setApiLink(apiUrl + numWords)
     }
 
     // useEffect for fetching random words from API
@@ -84,6 +93,15 @@ function MemorizeWordGame() {
         }, 3000);
     }, [level])
 
+    const inputRef = useRef<HTMLInputElement>(null);
+    //useEffect to focus on the input whenever visibility changes
+    useEffect(() => {
+    
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, [wordsVisibility]);
+
     if (APIdown) {
         return (
             <>
@@ -99,7 +117,7 @@ function MemorizeWordGame() {
             <h1>Type in the words</h1>
             {wordsVisibility ? <p  style={{ userSelect: "none" }}>{words.join(" ")}</p> : <p></p>}
             <p>Level {level}</p>
-            {wordsVisibility ? <p></p> : <input type="text" onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => {if (e.key == "Enter") checkAnswer()}}/>}  
+            {wordsVisibility ? <p></p> : <input ref={inputRef} type="text" onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => {if (e.key == "Enter") checkAnswer()}}/>}  
             {wordsVisibility ? <p></p> : <button onClick={checkAnswer}>Submit</button> }
         </>
         )
