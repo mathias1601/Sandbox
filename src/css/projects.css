@@ -8,9 +8,43 @@
     border-radius: 20px;
 }
 
-.repo {
-    padding-left: 20px;
+.banner_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 5px;
 }
+
+.no_banner {
+    width: 100%;
+    height: 200px; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border: 3px solid black;
+    border-radius: 20px;
+
+    background: linear-gradient(135deg, #f3f3f3, #e0e0e0);
+    color: #555;
+
+    overflow: hidden;
+}
+
+.no_banner_title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    color: #555;
+}
+
+.no_banner p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #777;
+}
+
 
 .display_banner {
     width: 100%;

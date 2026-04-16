@@ -3,6 +3,7 @@ import { Card } from "react-bootstrap";
 import { FaGithub } from "react-icons/fa";
 import pawCastBanner from '../assets/pawcast_banner.jpg';
 import sandboxBanner from '../assets/sandbox_banner.jpg';
+import no_banner from '../assets/no_banner.png';
 import '../css/projects.css'
 
 
@@ -32,7 +33,13 @@ function GithubRepo() {
                                 </a>
                             </div>
                         ) : (
-                            <a href={item.svn_url}>{item.name}</a>
+                            <div  className='no_banner' >
+                                <p className='no_banner_title'>{item.name}</p>
+                                <p>No banner available :/</p>
+                                <a className='github_btn' href={item.svn_url}>
+                                    <FaGithub />
+                                </a>
+                            </div>
                         )}
                        
                     </div>
@@ -76,7 +83,7 @@ function GithubRepo() {
                 <a className='btn btn-primary' href={githubLink}><FaGithub /></a>
             </Card>
         </div>
-        <div className='repo'>
+        <div className='banner_container'>
             {repoData}
         </div>
     </div>
