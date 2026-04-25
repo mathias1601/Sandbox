@@ -37,8 +37,10 @@
 }
 
 .info {
-    text-align: left;
+    text-align: center;
     padding: 7px;
+    max-width: 1000px;
+    margin: 0 auto; 
 }
 
 .part {

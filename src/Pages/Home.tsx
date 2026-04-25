@@ -2,7 +2,7 @@ import "../css/home.css"
 
 function Home() {
   const titleMessage = "Hallo!"
-  const mainMessage = "Jeg er en bachelor-student på mitt tredje år på UiO, og studerer Programmering og Systemarkitektur (PROSA). Skjekk ut nettsiden min for å bli litt bedre kjent med meg!"
+  const mainMessage = "Jeg er en master-student på mitt fjerde år på UiO, og studerer Programmering og Systemarkitektur (PROSA). Skjekk ut nettsiden min for å bli litt bedre kjent med meg!"
 
   return (
     <div>

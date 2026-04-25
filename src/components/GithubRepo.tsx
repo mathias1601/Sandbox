@@ -3,14 +3,15 @@ import { Card } from "react-bootstrap";
 import { FaGithub } from "react-icons/fa";
 import pawCastBanner from '../assets/pawcast_banner.jpg';
 import sandboxBanner from '../assets/sandbox_banner.jpg';
-import no_banner from '../assets/no_banner.png';
+import lawnmowerBanner from '../assets/lawnmower_banner.png';
 import '../css/projects.css'
 
 
 function GithubRepo() {
     const repoImages: Record<string, string> = {
         'PawCast': pawCastBanner, 
-        'Sandbox': sandboxBanner
+        'Sandbox': sandboxBanner,
+        'Wild_Lawnmower': lawnmowerBanner
     }
 
     const [avatarUrl, setAvatarURL] = useState();

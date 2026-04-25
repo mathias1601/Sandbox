@@ -11,6 +11,15 @@ function CV() {
         <div className='cv-box'>
           <div className='part'>
             <p className = 'title'>
+              Master i informatikk: Programmering og systemarkitektur
+              </p>
+            <p className='small-italic'>Universitet i Oslo / Institutt for informatikk</p>
+            <p className='small-italic'>Aug. 2025 - Jun. 2027</p>
+          </div>
+
+
+          <div className='part'>
+            <p className = 'title'>
               Bachelor i informatikk: Programmering og systemarkitektur
               </p>
             <p className='small-italic'>Universitet i Oslo / Institutt for informatikk</p>
@@ -30,6 +39,18 @@ function CV() {
       <div className='category'>
         <h1>Arbeidserfaring</h1>
         <div className='cv-box'>
+          <div className='part'>
+            <p className = 'title'>
+              IN1150 gruppelærer
+            </p>
+            <p className='small-italic'>Vår 2026 - Nå</p>
+            <p className='info'>
+              Arbeider som gruppelærer i emnet IN1150, logiske metoder. Her så så hadde jeg ansvar for å planlegge og gjennomføre ukentlige undervisningstimer, samt å rette obligatoriske innleveringer.
+              Studenter kunne også kontakte meg for hjelp og spørsmål, og jeg var tilgjengelig for å hjelpe dem med eventuelle problemer de måtte ha både under og utenfor gruppetimene.
+            </p>
+          </div>
+
+
           <div className='part'>
             <p className = 'title'>
               IN1000 retter/gruppelærer
@@ -73,6 +94,18 @@ function CV() {
             Ansvarsområder består hovedsaklig av vedlikehold og innkjøp av diverse utstyr. 
             Andre medlemmer vil rapportere eventuelle tekniske problemer, der jeg enten kontakter korresponderende service, eller fikser problemet
             på egen hånd.
+            </p>
+
+          </div>
+
+          <div className='part'>
+            <p className = 'title'>
+                LA-seminar: Sertifisering
+            </p>
+            <p className='small-italic'>Mars 2026 - April 2026</p>
+            <p className='info'>
+              Læringsassistent (LA)-seminaret er et 7-ukers vitenskapelig basert treningsprogram.
+              Seminaret er designet for å utruste gruppelærere med effektive undervisningsteknikker, med særlig fokus på aktiv læring og gruppeledelse.
             </p>
 
           </div>
