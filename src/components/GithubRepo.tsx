@@ -27,19 +27,30 @@ function GithubRepo() {
                 const list = result.map((item: any) => (
                     <div key={item.name}>
                         {repoImages[item.name] ? (
-                            <div  className='display_banner' >
-                                <img className='banner' src={repoImages[item.name]} alt="No banner" />
-                                <a className='github_btn' href={item.svn_url}>
-                                    <FaGithub />
-                                </a>
+                            <div className='display_banner' >
+                                <div className='banner_image_wrapper'>
+                                    <img className='banner' src={repoImages[item.name]} alt="No banner" />
+                                </div>
+                                <div className='banner_overlay'>
+                                    <p>{item.name}</p>
+                                    <a className='github_btn' href={item.svn_url}>
+                                        <FaGithub />
+                                    </a>
+                                </div>
+                                
                             </div>
                         ) : (
-                            <div  className='no_banner' >
-                                <p className='no_banner_title'>{item.name}</p>
-                                <p>No banner available :/</p>
-                                <a className='github_btn' href={item.svn_url}>
-                                    <FaGithub />
-                                </a>
+                            <div className='display_banner' >
+                                <div className='no_banner'>
+                                    <p className='no_banner_title'>{item.name}</p>
+                                    <p>No banner available :/</p>
+                                </div>
+                                <div className='banner_overlay'>
+                                    <p>{item.name}</p>
+                                    <a className='github_btn' href={item.svn_url}>
+                                        <FaGithub />
+                                    </a>
+                                </div>
                             </div>
                         )}
                        
