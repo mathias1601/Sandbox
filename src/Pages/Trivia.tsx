@@ -21,7 +21,7 @@ function Trivia() {
 
     let apiUrl: string
 
-    if (process.env.NODE_ENV != 'development') {    
+    if (import.meta.env.MODE !== 'development') {    
         apiUrl = `https://the-trivia-api.com/api/questions?amount=${numQuestions}`;
     }
     else {

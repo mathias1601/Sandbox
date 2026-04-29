@@ -7,7 +7,7 @@ function MemorizeWordGame() {
     
     let apiUrl: string
 
-    if (process.env.NODE_ENV != 'development') {    
+    if (import.meta.env.MODE !== 'development'){    
         apiUrl = `https://random-word-api.herokuapp.com/word?number=`;
     }
     else {
