@@ -8,7 +8,7 @@ function MemorizeWordGame() {
     let apiUrl: string
 
     if (import.meta.env.MODE !== 'development'){    
-        apiUrl = `https://random-word-api.herokuapp.com/word?number=`;
+        apiUrl = `https://sandbox-sigma-six.vercel.app/api/randomwords?number=`;
     }
     else {
         apiUrl = '/randomwords/word?number=';

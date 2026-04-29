@@ -22,7 +22,7 @@ function Trivia() {
     let apiUrl: string
 
     if (import.meta.env.MODE !== 'development') {    
-        apiUrl = `https://the-trivia-api.com/api/questions?amount=${numQuestions}`;
+        apiUrl = `https://sandbox-sigma-six.vercel.app/api/trivia?amount=${numQuestions}`;
     }
     else {
         apiUrl = `/trivia/api/questions?amount=${numQuestions}`;

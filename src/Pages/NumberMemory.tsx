@@ -11,15 +11,16 @@ function NumberMemory() {
 
   const [visibility, setVisibility] = useState(true); // Keeps track of the visibility of the words 
 
-  const checkAnswer = () => {
 
-        if (number != input) {
-            setScreen(-1)
-            return 
-        }
-      updateLevel()
-      
-  }
+	const checkAnswer = () => {
+
+			if (number != input) {
+					setScreen(-1)
+					return 
+			}
+		updateLevel()
+		
+	}
 
   const updateLevel = () => {
       if (level == 0) {
@@ -27,8 +28,9 @@ function NumberMemory() {
       }
       else {
         setDigits(digits + 1)
-          setLevel(level + 1) 
+        setLevel(level + 1) 
       }
+			getRandomNumber()
 
   }
 
@@ -42,22 +44,22 @@ function NumberMemory() {
       setDigits(1)
   }
 
-  // useEffect for fetching random words from API
-  useEffect(() => {
+  const getRandomNumber = () => {
         console.log(digits)
         const min = 10 ** (digits - 1); // Smallest number with x digits
         const max = 10 ** digits - 1;   // Largest number with x digits
-        setNumber((Math.floor(Math.random() * (max - min + 1)) + min).toString());
-  }, [level]);
+        setNumber((Math.floor(Math.random() * (max - min + 1)) + min).toString())
+        makeInvisible()
+  }
 
-  // useEffect for making words dissappear after set time
-  useEffect(() => {
+  // For making words dissappear after set time
+  const makeInvisible = () => {
       setVisibility(true)
       
       setTimeout(() => {
           setVisibility(false);
       }, 3000);
-  }, [level])
+  }
 
   
   const inputRef = useRef<HTMLInputElement>(null);
