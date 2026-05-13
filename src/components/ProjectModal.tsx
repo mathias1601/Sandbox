@@ -7,6 +7,7 @@ export interface ProjectRepo {
     description?: string | null;
     language?: string | null;
     html_url?: string;
+    homepage?: string | null;
 }
 
 interface ProjectModalProps {
@@ -22,6 +23,7 @@ function ProjectModal({ project, bannerImage, show, onClose }: ProjectModalProps
     }
 
     const githubUrl = project.html_url ?? project.svn_url;
+    const homepageUrl = project.homepage ?? null;
 
     return (
         <Modal show={show} onHide={onClose} centered size="xl">
@@ -58,6 +60,11 @@ function ProjectModal({ project, bannerImage, show, onClose }: ProjectModalProps
                     <FaGithub className='project_modal_icon' />
                     GitHub
                 </Button>
+                {homepageUrl && (
+                    <a className="btn btn-primary"  href={homepageUrl} target='_blank' rel='noreferrer'>
+                        Demo
+                    </a> 
+                    )}
             </Modal.Footer>
         </Modal>
     );
