@@ -1,10 +1,10 @@
 .main {
-  margin-top: 5%;
+  margin-top: 5rem;
 }
 
 #root {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 100%;
   overflow: auto;
   margin: 0 auto;
   padding: 2rem;
@@ -70,4 +70,30 @@ body {
 
 .read-the-docs {
   color: #888;
+}
+
+/* For mobile */
+
+@media (max-width: 900px) {
+  .main {
+    margin-top: 5.5rem;
+  }
+
+  #root {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.25em;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    margin-top: 4.75rem;
+  }
+
+  #root {
+    padding: 0.75rem;
+  }
 }

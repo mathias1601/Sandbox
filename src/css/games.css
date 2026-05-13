@@ -1,12 +1,13 @@
 .games_display_banner {
     width: 60%;
+    max-width: 760px;
     align-items: center;
-    display: inline-block;
+    display: block;
     position: relative;
     flex-direction: column;
     border: 3px solid black;
     border-radius: 20px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
     transition: transform .2s;
 }
 
@@ -17,9 +18,32 @@
 
 .games_banner {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 16px;
 }
 
 .games_display_banner:hover {
     transform: scale(1.1);
+}
+
+/* For mobile */
+
+@media (max-width: 900px) {
+    .games_display_banner {
+        width: min(100%, 680px);
+        margin-bottom: 1.25rem;
+    }
+
+    .games_display_banner:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .games_display_banner {
+        border-radius: 12px;
+    }
+
+    .games_banner {
+        border-radius: 10px;
+    }
 }

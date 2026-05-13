@@ -3,20 +3,18 @@
 .custom-navbar-button {
     border: none;
     border-bottom: 0.188rem solid transparent;
-    padding: 0.625rem 3.125rem;
+    padding: 0.625rem clamp(1rem, 4vw, 3.125rem);
     transition: border-bottom 0.5s ease;
     background-color: transparent;
     color: white;
-    font-size: 20px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     text-decoration: none;
 }
 
 .active-button {
     border-bottom: 2px solid white;
-    padding: 10px 50px;
     background-color: transparent;
     color: white;
-    font-size: 20px;
 }
 
 .button-container {
@@ -35,6 +33,7 @@
 
 .custom-navbar {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     background: linear-gradient(to bottom, rgba(39, 84, 138, 0.7), rgba(39, 84, 138, 0));
     top: 0;
@@ -44,9 +43,13 @@
     width: 100%;
     color: white;
     position: fixed;
-    padding: 1.563rem;
+    padding: 1rem 1.5rem;
     z-index: 1;
     pointer-events: none;
+}
+
+.custom-navbar h1 {
+    margin: 0;
 }
 
 .custom-navbar * {
@@ -67,18 +70,19 @@
     cursor: pointer;
 }
 
-/* Responsive behavior */
+/* Responsive behavior for mobile or small window sizes */
 @media (max-width: 900px) {
     .button-container {
         display: none;
         position: absolute;
-        top: 70px;
-        right: 10px;
-        background: gray;
+        top: 100%;
+        right: 1rem;
+        min-width: min(220px, calc(100vw - 2rem));
+        background: rgba(82, 78, 72, 0.96);
         flex-direction: column;
         gap: 0.5rem;
         padding: 1rem;
-        box-shadow: 0 2px 8px rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 24px rgba(45, 36, 24, 0.2);
         border-radius: 8px;
     }
 
@@ -88,5 +92,34 @@
 
     .hamburger {
         display: block;
+    }
+
+    .custom-navbar {
+        padding: 0.75rem 1rem;
+    }
+
+    .custom-navbar-button,
+    .active-button {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        text-align: left;
+    }
+
+    .custom-dropdown {
+        align-items: center;
+    }
+
+    .dropdown-arrow {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-navbar img {
+        width: 42px;
+    }
+
+    .hamburger {
+        font-size: 1.75rem;
     }
 }

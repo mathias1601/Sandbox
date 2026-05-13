@@ -79,18 +79,6 @@
     padding-left: 5px;
 }
 
-@media (max-width: 900px) {
-    .display {
-        display: block;
-    }
-
-    .github_card {
-        text-align: center;
-        margin-left: 25%;
-        margin-bottom: 5%;
-    }
-}
-
 .link_container {
     text-decoration: none;
 }
@@ -148,4 +136,67 @@
 .project_modal .modal-header,
 .project_modal .modal-footer {
     border-color: #5C4E38;
+}
+
+/* Mobile display */
+
+@media (max-width: 900px) {
+    .display {
+        display: block;
+        padding: 0;
+    }
+
+    .github_card {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .github_card .card {
+        width: min(100%, 360px) !important;
+    }
+
+    .banner_container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
+    .display_banner {
+        border-radius: 12px;
+    }
+
+    .project_modal .modal-dialog {
+        margin: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner_container {
+        max-width: 360px;
+    }
+
+    .banner_overlay {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .banner_image_wrapper {
+        aspect-ratio: 16 / 5;
+    }
+
+    .project_modal_banner {
+        aspect-ratio: 16 / 6;
+    }
+
+    .project_modal .modal-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .project_modal .modal-footer .btn {
+        width: 100%;
+        margin: 0;
+    }
 }

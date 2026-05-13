@@ -1,9 +1,23 @@
 .intro-container {
-    margin-top: 5%;
+    margin-top: 2rem;
 }
 
 .introText {
     max-width: clamp(300px, 50%, 800px);
     margin: 0 auto;
     text-align: center;
+}
+
+/* For mobile */
+
+@media (max-width: 900px) {
+    .introText {
+        max-width: min(800px, 100%);
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-container {
+        margin-top: 1rem;
+    }
 }
