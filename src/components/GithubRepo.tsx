@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { JSX, useEffect, useState } from 'react'
 import { Card } from "react-bootstrap";
 import { FaGithub } from "react-icons/fa";
 import pawCastBanner from '../assets/pawcast_banner.jpg';
@@ -14,17 +14,26 @@ function GithubRepo() {
         'Wild_Lawnmower': lawnmowerBanner
     }
 
-    const [avatarUrl, setAvatarURL] = useState();
-    const [githubName, setGithubName] = useState();
-    const [githubLink, setGithubLink] = useState();
-    const [repoData, setRepoData] = useState();
+    const [avatarUrl, setAvatarURL] = useState<string>("");
+    const [githubName, setGithubName] = useState<string>("");
+    const [githubLink, setGithubLink] = useState<string>("");
+    const [repoData, setRepoData] = useState<JSX.Element[]>([]);
 
     useEffect(() => {
         fetch("https://api.github.com/users/mathias1601/repos")
         .then((res) => res.json())
         .then(
             (result) => {
-                const list = result.map((item: any) => (
+                const sorted = [...result].sort((a: any, b: any) => {
+                    const aHasBanner = !!repoImages[a.name];
+                    const bHasBanner = !!repoImages[b.name];
+                    if (aHasBanner && !bHasBanner) return -1;
+                    if (!aHasBanner && bHasBanner) return 1;
+                    return 0;
+                });
+
+
+                const list = sorted.map((item: any) => (
                     <div key={item.name}>
                         <a className='link_container' href={item.svn_url}>
                             <div className='display_banner'>                    
