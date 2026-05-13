@@ -1,69 +1,48 @@
-import { JSX, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Card } from "react-bootstrap";
 import { FaGithub } from "react-icons/fa";
+import ProjectModal, { ProjectRepo } from './ProjectModal';
 import pawCastBanner from '../assets/pawcast_banner.jpg';
 import sandboxBanner from '../assets/sandbox_banner.jpg';
 import lawnmowerBanner from '../assets/lawnmower_banner.png';
+import ondsperaBanner from '../assets/ondspera_banner.png';
+import pomoflexBanner from '../assets/pomoflex_banner.png';
+import periodleBanner from '../assets/periodle_banner.png';
 import '../css/projects.css'
+
+
+const extraRepos: ProjectRepo[] = [{
+    name: "Ondspera",
+    svn_url: "https://github.com/ka-thas/ondspera",
+    description: "Ondspera er den onde versjonen av Inspera, eksamensplattformen. Det er et ragebait-puslespill laget i Next.js av meg og vennen min Ka. Spillet simulerer den virkelig onde naturen til Inspera."
+}]
 
 
 function GithubRepo() {
     const repoImages: Record<string, string> = {
         'PawCast': pawCastBanner, 
         'Sandbox': sandboxBanner,
-        'Wild_Lawnmower': lawnmowerBanner
+        'Wild_Lawnmower': lawnmowerBanner,
+        'Ondspera': ondsperaBanner,
+        'PomoFlex': pomoflexBanner,
+        'Periodle': periodleBanner
     }
 
     const [avatarUrl, setAvatarURL] = useState<string>("");
     const [githubName, setGithubName] = useState<string>("");
     const [githubLink, setGithubLink] = useState<string>("");
-    const [repoData, setRepoData] = useState<JSX.Element[]>([]);
+    const [repoData, setRepoData] = useState<ProjectRepo[]>([]);
+    const [selectedProject, setSelectedProject] = useState<ProjectRepo | null>(null);
 
     useEffect(() => {
         fetch("https://api.github.com/users/mathias1601/repos")
         .then((res) => res.json())
         .then(
             (result) => {
-                const sorted = [...result].sort((a: any, b: any) => {
-                    const aHasBanner = !!repoImages[a.name];
-                    const bHasBanner = !!repoImages[b.name];
-                    if (aHasBanner && !bHasBanner) return -1;
-                    if (!aHasBanner && bHasBanner) return 1;
-                    return 0;
-                });
+                result.push(...extraRepos)
 
-
-                const list = sorted.map((item: any) => (
-                    <div key={item.name}>
-                        <a className='link_container' href={item.svn_url}>
-                            <div className='display_banner'>                    
-                            {repoImages[item.name] ? (
-                                <div>
-                                    <div className='banner_image_wrapper'>
-                                        <img className='banner' src={repoImages[item.name]} alt="No banner" />
-                                    </div>
-                                    <div className='banner_overlay'>
-                                        <p>{item.name}</p>
-                                    </div>
-                                    
-                                </div>
-                            ) : (
-                                <div>
-                                    <div className='no_banner'>
-                                        <p className='no_banner_title'>{item.name}</p>
-                                        <p>No banner available :/</p>
-                                    </div>
-                                    <div className='banner_overlay'>
-                                        <p>{item.name}</p>
-                                    </div>
-                                </div>
-                            )}
-                            </div>
-                        </a>
-                       
-                    </div>
-                ))
-                setRepoData(list)
+                const hasBanner = [...result].filter((item) => repoImages[item.name])
+                setRepoData(hasBanner)
             },
             (error) => {
                 console.log(error);
@@ -88,6 +67,10 @@ function GithubRepo() {
         );
     }, []);
 
+    const closeProjectModal = () => {
+        setSelectedProject(null);
+    }
+
 
   return   (
     <>
@@ -103,9 +86,33 @@ function GithubRepo() {
             </Card>
         </div>
         <div className='banner_container'>
-            {repoData}
+            {repoData.map((item) => (
+                <button
+                    key={item.name}
+                    className='link_container project_tile'
+                    type='button'
+                    onClick={() => setSelectedProject(item)}
+                >
+                    <div className='display_banner'>
+                        <div>
+                            <div className='banner_image_wrapper'>
+                                <img className='banner' src={repoImages[item.name]} alt={`${item.name} banner`} />
+                            </div>
+                            <div className='banner_overlay'>
+                                <p>{item.name}</p>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            ))}
         </div>
     </div>
+    <ProjectModal
+        project={selectedProject}
+        bannerImage={selectedProject ? repoImages[selectedProject.name] : undefined}
+        show={selectedProject !== null}
+        onClose={closeProjectModal}
+    />
     </>
   )
 }
