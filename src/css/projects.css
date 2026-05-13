@@ -140,3 +140,12 @@
 .project_modal_icon {
     margin-right: 6px;
 }
+
+.project_modal .modal-content {
+    background-color: #F5EEDC;
+}
+
+.project_modal .modal-header,
+.project_modal .modal-footer {
+    border-color: #5C4E38;
+}

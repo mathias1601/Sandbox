@@ -1,5 +1,6 @@
 import { Button, Modal } from 'react-bootstrap';
 import { FaGithub } from 'react-icons/fa';
+import '../css/projects.css'
 
 export interface ProjectRepo {
     name: string;
@@ -26,7 +27,7 @@ function ProjectModal({ project, bannerImage, show, onClose }: ProjectModalProps
     const homepageUrl = project.homepage ?? null;
 
     return (
-        <Modal show={show} onHide={onClose} centered size="xl">
+        <Modal show={show} onHide={onClose} centered size="xl" className='project_modal'>
             <Modal.Header closeButton>
                 <Modal.Title>{project.name}</Modal.Title>
             </Modal.Header>
