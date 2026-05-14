@@ -26,6 +26,8 @@ function MemorizeWordGame() {
 
     const [wordsVisibility, setWordsVisibility] = useState(true); // Keeps track of the visibility of the words 
 
+    const [loading, setLoading] = useState(false);
+
     const checkAnswer = () => {
         let inputSet = new Set(input.split(" "))
         console.log(inputSet)
@@ -72,16 +74,21 @@ function MemorizeWordGame() {
 
     // useEffect for fetching random words from API
     useEffect(() => {
+        console.log("test1")
+        setLoading(true)
         axios.get(apiLink)
             .then((res) => {
                 console.log(res.data)
                 setWords(res.data); 
                 setAPIdown(false)
+                setLoading(false)
             })
             .catch((error) => {
                 console.error("Error fetching data:", error);
                 setAPIdown(true)
+                setLoading(false)
             });
+        
     }, [level]);
 
     // useEffect for making words dissappear after set time
@@ -106,6 +113,14 @@ function MemorizeWordGame() {
         return (
             <>
                 The API server is sadly down :/
+            </>
+        )
+    }
+
+    if (loading) {
+        return (
+            <>
+                Loading...
             </>
         )
     }

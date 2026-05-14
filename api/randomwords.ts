@@ -4,6 +4,21 @@ export default async function handler(
   request: VercelRequest,
   response: VercelResponse
 ) {
+  response.setHeader("Access-Control-Allow-Credentials", "true");
+  response.setHeader("Access-Control-Allow-Origin", "*");
+  response.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+  );
+  response.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+  );
+
+  if (request.method === "OPTIONS") {
+    return response.status(200).end();
+  }
+
   const { number = "1" } = request.query;
 
   try {
@@ -18,17 +33,6 @@ export default async function handler(
     }
 
     const data = await apiResponse.json();
-    response.setHeader("Access-Control-Allow-Credentials", "true");
-    response.setHeader("Access-Control-Allow-Origin", "*");
-    response.setHeader(
-      "Access-Control-Allow-Methods",
-      "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-    );
-    response.setHeader(
-      "Access-Control-Allow-Headers",
-      "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-    );
-
     return response.status(200).json(data);
   } catch (error) {
     console.error("Error fetching from randomwords API:", error);
