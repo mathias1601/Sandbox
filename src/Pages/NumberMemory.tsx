@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react'
 function NumberMemory() {
   // State to track the current screen of the game
 
-  const [digits, setDigits] = useState<number>(1);
   const [level, setLevel] = useState<number>(0);
   const [screen, setScreen] = useState<number>(0);
   const [number, setNumber] = useState<string>("");
@@ -23,14 +22,10 @@ function NumberMemory() {
 	}
 
   const updateLevel = () => {
-      if (level == 0) {
-          setLevel(1)
-      }
-      else {
-        setDigits(digits + 1)
-        setLevel(level + 1) 
-      }
-			getRandomNumber()
+        const newLevel = level + 1
+        setLevel(newLevel)
+	    getRandomNumber(newLevel)
+         
 
   }
 
@@ -41,13 +36,12 @@ function NumberMemory() {
   const retry = () => {
       setScreen(0) 
       setLevel(0)
-      setDigits(1)
   }
 
-  const getRandomNumber = () => {
-        console.log(digits)
-        const min = 10 ** (digits - 1); // Smallest number with x digits
-        const max = 10 ** digits - 1;   // Largest number with x digits
+  const getRandomNumber = (newLevel: number) => {
+        
+        const min = 10 ** (newLevel - 1); // Smallest number with x digits
+        const max = 10 ** newLevel - 1;   // Largest number with x digits
         setNumber((Math.floor(Math.random() * (max - min + 1)) + min).toString())
         makeInvisible()
   }
@@ -97,7 +91,7 @@ function NumberMemory() {
           <>
               <h1>Memorize the number!</h1>
               <p>Memorize the number. The amount of digits to remember increases based on the level</p>
-              <p>You many levels can you complete?</p>
+              <p>How many levels can you complete?</p>
               <button onClick={ () =>  {startGame(); updateLevel();}} >Play</button>
           </>
       )
