@@ -28,9 +28,6 @@ function GithubRepo() {
         'Periodle': periodleBanner
     }
 
-    const [avatarUrl, setAvatarURL] = useState<string>("");
-    const [githubName, setGithubName] = useState<string>("");
-    const [githubLink, setGithubLink] = useState<string>("");
     const [repoData, setRepoData] = useState<ProjectRepo[]>([]);
     const [selectedProject, setSelectedProject] = useState<ProjectRepo | null>(null);
 
@@ -50,23 +47,6 @@ function GithubRepo() {
         );
     }, []);
 
-
-    useEffect(() => {
-        fetch("https://api.github.com/users/mathias1601")
-        .then((res) => res.json())
-        .then(
-            (result) => {
-                console.log(result);
-                setAvatarURL(result.avatar_url);
-                setGithubName(result.login);
-                setGithubLink(result.html_url)
-            },
-            (error) => {
-                console.log(error);
-            }
-        );
-    }, []);
-
     const closeProjectModal = () => {
         setSelectedProject(null);
     }
@@ -74,45 +54,41 @@ function GithubRepo() {
 
   return   (
     <>
-    <div className='display'>
-        <div className='github_card'>
-            <Card style= {{width: "75%"}} >
-                <Card.Img variant="top" src={avatarUrl}/>
-                <h1>{githubName}</h1>
-                <Card.Text>
-                    Du kan se på prosjektene mine her!
-                </Card.Text>
-                <a className='btn btn-primary' href={githubLink}><FaGithub /></a>
-            </Card>
+        <div style={{ textAlign: "left", fontSize: "19px" }}>
+            <p>
+                Her er en liste over noen av prosjektene mine. Mer kode kan bli funnet på <a href={"https://github.com/mathias1601/"}>GitHub</a>
+            </p>
         </div>
-        <div className='banner_container'>
-            {repoData.map((item) => (
-                <button
-                    key={item.name}
-                    className='link_container project_tile'
-                    type='button'
-                    onClick={() => setSelectedProject(item)}
-                >
-                    <div className='display_banner'>
-                        <div>
-                            <div className='banner_image_wrapper'>
-                                <img className='banner' src={repoImages[item.name]} alt={`${item.name} banner`} />
-                            </div>
-                            <div className='banner_overlay'>
-                                <p>{item.name}</p>
+        <div className='display'>
+            
+            <div className='banner_container'>
+                {repoData.map((item) => (
+                    <button
+                        key={item.name}
+                        className='link_container project_tile'
+                        type='button'
+                        onClick={() => setSelectedProject(item)}
+                    >
+                        <div className='display_banner'>
+                            <div>
+                                <div className='banner_image_wrapper'>
+                                    <img className='banner' src={repoImages[item.name]} alt={`${item.name} banner`} />
+                                </div>
+                                <div className='banner_overlay'>
+                                    <p>{item.name}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </button>
-            ))}
+                    </button>
+                ))}
+            </div>
         </div>
-    </div>
-    <ProjectModal
-        project={selectedProject}
-        bannerImage={selectedProject ? repoImages[selectedProject.name] : undefined}
-        show={selectedProject !== null}
-        onClose={closeProjectModal}
-    />
+        <ProjectModal
+            project={selectedProject}
+            bannerImage={selectedProject ? repoImages[selectedProject.name] : undefined}
+            show={selectedProject !== null}
+            onClose={closeProjectModal}
+        />
     </>
   )
 }

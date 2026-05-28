@@ -21,7 +21,7 @@ function CV() {
           <div className='part'>
             <p className = 'title'>
               Bachelor i informatikk: Programmering og systemarkitektur
-              </p>
+            </p>
             <p className='small-italic'>Universitet i Oslo / Institutt for informatikk</p>
             <p className='small-italic'>Aug. 2022 - Jun. 2025</p>
           </div>

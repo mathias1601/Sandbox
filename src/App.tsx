@@ -25,10 +25,6 @@ function App() {
           <Route path="/CV" element={<div className='main'><CV /></div>} />
           <Route path="/Projects" element={<div className='main'><Projects /></div>} />
 
-          {/* Games are now attached to a dropdown, most likely drop GroceryGuessr */}
-
-          <Route path="/MemorizeWordGame" element={<div className='main'><MemorizeWordGame /></div>} />
-          <Route path="/GroceryGuessr" element={<div className='main'><GroceryGuessr /></div>} />
           <Route path="/NumberMemory" element={<div className='main'><NumberMemory /></div>} />
           <Route path="/Trivia" element={<div className='main'><Trivia /></div>} /> 
           <Route path="/Games" element={<div className='main'><Games /></div>} />
