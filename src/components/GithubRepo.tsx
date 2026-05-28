@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Card } from "react-bootstrap";
-import { FaGithub } from "react-icons/fa";
 import ProjectModal, { ProjectRepo } from './ProjectModal';
 import pawCastBanner from '../assets/pawcast_banner.jpg';
 import sandboxBanner from '../assets/sandbox_banner.jpg';

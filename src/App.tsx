@@ -4,8 +4,6 @@ import './css/navbar.css'
 import CV from './Pages/CV';
 import Projects from './Pages/Projects';
 import Home from './Pages/Home';
-import MemorizeWordGame from './Pages/MemorizeWordGame';
-import GroceryGuessr from './Pages/GroceryGuessr';
 import NumberMemory from './Pages/NumberMemory';
 import Trivia from './Pages/Trivia';
 import "@fontsource/lexend-deca";
