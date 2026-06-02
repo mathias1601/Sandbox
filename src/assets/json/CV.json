@@ -1,0 +1,62 @@
+{
+  "sections": [
+    {
+      "id": "utdanning",
+      "title": "Utdanning",
+      "entries": [
+        {
+          "title": "Master i informatikk: Programmering og systemarkitektur",
+          "subtitle": "Universitet i Oslo / Institutt for informatikk",
+          "period": "Aug. 2025 - Jun. 2027"
+        },
+        {
+          "title": "Bachelor i informatikk: Programmering og systemarkitektur",
+          "subtitle": "Universitet i Oslo / Institutt for informatikk",
+          "period": "Aug. 2022 - Jun. 2025"
+        },
+        {
+          "title": "Studiespesialiserende VGS",
+          "subtitle": "Oslo katedralskole",
+          "period": "2019 - 2022"
+        }
+      ]
+    },
+    {
+      "id": "arbeidserfaring",
+      "title": "Arbeidserfaring",
+      "entries": [
+        {
+          "title": "IN1150 gruppelærer",
+          "period": "Vår 2026 - Nå",
+          "description": "Arbeider som gruppelærer i emnet IN1150, logiske metoder. Her hadde jeg ansvar for å planlegge og gjennomføre ukentlige undervisningstimer, samt å rette obligatoriske innleveringer. Studenter kunne også kontakte meg for hjelp og spørsmål, og jeg var tilgjengelig for å hjelpe dem med eventuelle problemer de måtte ha både under og utenfor gruppetimene."
+        },
+        {
+          "title": "Mentor for MentorNorge",
+          "period": "Feb. 2025 - nå",
+          "description": "Arbeider som privatlærer. Arbeidsområder kan variere fra planlegging av undervisningstimer til generell leksehjelp. Hovedessensen er å ha fleksible undervisninger som er tilpasset hver elev og deres behov."
+        },
+        {
+          "title": "IN1000 retter/gruppelærer",
+          "period": "Høst 2023 - Vår 2024",
+          "description": "Arbeidet som retter i emnet IN1000. Ansvar besto hovedsakelig av retting av obligatoriske innleveringer. Var også orakel/hjelpelærer hvor studenter kan be om hjelp og stille spørsmål."
+        }
+      ]
+    },
+    {
+      "id": "diverse",
+      "title": "Diverse",
+      "entries": [
+        {
+          "title": "Verv i CYB (Cybernetisk-selskap): Teknisk ansvarlig",
+          "period": "Februar 2025 - nå",
+          "description": "Ansvarsområder består hovedsaklig av vedlikehold og innkjøp av diverse utstyr. Andre medlemmer vil rapportere eventuelle tekniske problemer, der jeg enten kontakter korresponderende service, eller fikser problemet på egen hånd."
+        },
+        {
+          "title": "LA-seminar: Sertifisering",
+          "period": "Mars 2026 - April 2026",
+          "description": "Læringsassistent (LA)-seminaret er et 7-ukers vitenskapelig basert treningsprogram. Seminaret er designet for å utruste gruppelærere med effektive undervisningsteknikker, med særlig fokus på aktiv læring og gruppeledelse."
+        }
+      ]
+    }
+  ]
+}
