@@ -63,7 +63,6 @@ function Navbar() {
                 <Dropdown>
                     <Dropdown.Toggle className='custom-dropdown-toggle' />
                     <Dropdown.Menu>
-                    <Dropdown.Item as={NavLink} to="/MemorizeWordGame">Word memory</Dropdown.Item>
                     <Dropdown.Item as={NavLink} to="/NumberMemory">Number memory</Dropdown.Item>
                     <Dropdown.Item as={NavLink} to="/Trivia">Trivia</Dropdown.Item>
                     </Dropdown.Menu>
