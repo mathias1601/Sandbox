@@ -6,17 +6,17 @@
       "entries": [
         {
           "title": "Master i informatikk: Programmering og systemarkitektur",
-          "subtitle": "Universitet i Oslo / Institutt for informatikk",
+          "org": "Universitet i Oslo / Institutt for informatikk",
           "period": "Aug. 2025 - Jun. 2027"
         },
         {
           "title": "Bachelor i informatikk: Programmering og systemarkitektur",
-          "subtitle": "Universitet i Oslo / Institutt for informatikk",
+          "org": "Universitet i Oslo / Institutt for informatikk",
           "period": "Aug. 2022 - Jun. 2025"
         },
         {
           "title": "Studiespesialiserende VGS",
-          "subtitle": "Oslo katedralskole",
+          "org": "Oslo katedralskole",
           "period": "2019 - 2022"
         }
       ]
@@ -26,18 +26,33 @@
       "title": "Arbeidserfaring",
       "entries": [
         {
+          "title": "IN1000 gruppelærer",
+          "org": "Universitetet i Oslo (UiO)",
+          "period": "August 2026 - Desember 2026",
+          "description": "Som gruppelærer fikk jeg ansvar for å holde og planlegge 2 ukentlige gruppetimer i tillegg til å rette innleveringer til studenter"
+        },
+        {
+          "title": "Fagprodusent",
+          "org": "Akademiet",
+          "period": "Juni 2026 - August 2026",
+          "description": "Som fagprodusent assisterte jeg med produksjonen og oppbygningen av nettkurs for S2-mattematikk"
+        },
+        {
           "title": "IN1150 gruppelærer",
-          "period": "Vår 2026 - Nå",
-          "description": "Arbeider som gruppelærer i emnet IN1150, logiske metoder. Her hadde jeg ansvar for å planlegge og gjennomføre ukentlige undervisningstimer, samt å rette obligatoriske innleveringer. Studenter kunne også kontakte meg for hjelp og spørsmål, og jeg var tilgjengelig for å hjelpe dem med eventuelle problemer de måtte ha både under og utenfor gruppetimene."
+          "org": "Universitetet i Oslo (UiO)",
+          "period": "Januar 2026 - Mai 2026",
+          "description": "Arbeidet som gruppelærer i emnet IN1150, logiske metoder. Her hadde jeg ansvar for å planlegge og gjennomføre ukentlige undervisningstimer, samt å rette obligatoriske innleveringer. Studenter kunne også kontakte meg for hjelp og spørsmål, og jeg var tilgjengelig for å hjelpe dem med eventuelle problemer de måtte ha både under og utenfor gruppetimene."
         },
         {
-          "title": "Mentor for MentorNorge",
-          "period": "Feb. 2025 - nå",
-          "description": "Arbeider som privatlærer. Arbeidsområder kan variere fra planlegging av undervisningstimer til generell leksehjelp. Hovedessensen er å ha fleksible undervisninger som er tilpasset hver elev og deres behov."
+          "title": "Mentor",
+          "org": "MentorNorge",
+          "period": "Feb. 2025 - Juli 2026",
+          "description": "Arbeidet som privatlærer. Arbeidsområder kan variere fra planlegging av undervisningstimer til generell leksehjelp. Hovedessensen er å ha fleksible undervisninger som er tilpasset hver elev og deres behov."
         },
         {
-          "title": "IN1000 retter/gruppelærer",
-          "period": "Høst 2023 - Vår 2024",
+          "title": "IN1000 retter",
+          "org": "Universitetet i Oslo (UiO)",
+          "period": "August 2023 - Desember 2024",
           "description": "Arbeidet som retter i emnet IN1000. Ansvar besto hovedsakelig av retting av obligatoriske innleveringer. Var også orakel/hjelpelærer hvor studenter kan be om hjelp og stille spørsmål."
         }
       ]
@@ -47,14 +62,52 @@
       "title": "Diverse",
       "entries": [
         {
-          "title": "Verv i CYB (Cybernetisk-selskap): Teknisk ansvarlig",
-          "period": "Februar 2025 - nå",
+          "title": "Verv: Teknisk ansvarlig",
+          "org": "CYB (Cybernetisk-selskap)",
+          "period": "Februar 2025 - August 2025",
           "description": "Ansvarsområder består hovedsaklig av vedlikehold og innkjøp av diverse utstyr. Andre medlemmer vil rapportere eventuelle tekniske problemer, der jeg enten kontakter korresponderende service, eller fikser problemet på egen hånd."
         },
         {
           "title": "LA-seminar: Sertifisering",
+          "org": "Universitetet i Oslo (UiO)",
           "period": "Mars 2026 - April 2026",
           "description": "Læringsassistent (LA)-seminaret er et 7-ukers vitenskapelig basert treningsprogram. Seminaret er designet for å utruste gruppelærere med effektive undervisningsteknikker, med særlig fokus på aktiv læring og gruppeledelse."
+        }
+      ]
+    }
+  ],
+  "sidebar": [
+    {
+      "id": "kontakt",
+      "title": "Kontaktinformasjon",
+      "items": [
+        {
+          "icon": "email",
+          "label": "E-post",
+          "value": "mathias.xinyu.yang@gmail.com"
+        },
+        {
+          "icon": "location",
+          "label": "Sted",
+          "value": "Oslo, Norway"
+        }
+      ]
+    },
+    {
+      "id": "portefolje",
+      "title": "Portefølje",
+      "items": [
+        {
+          "icon": "github",
+          "label": "GitHub",
+          "value": "github.com/mathias1601",
+          "href": "https://github.com/mathias1601"
+        },
+        {
+          "icon": "projects",
+          "label": "Prosjekter",
+          "value": "Se mine prosjekter",
+          "href": "/Projects"
         }
       ]
     }
