@@ -92,8 +92,9 @@
     flex-shrink: 0;
 }
 
-.side-item a {
-    word-break: break-word;
+.side-item > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 @media (max-width: 900px) {
