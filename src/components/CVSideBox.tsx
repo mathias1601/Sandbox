@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
 import { IconType } from 'react-icons';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaFolderOpen, FaPython, FaJava } from 'react-icons/fa';
-import { IoLogoJavascript } from "react-icons/io";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaFolderOpen, FaClipboardCheck, FaDatabase, FaRobot, FaAndroid } from 'react-icons/fa';
+import { FcParallelTasks } from "react-icons/fc";
+import { IoAnalytics, IoWarning } from "react-icons/io5";
+import { MdOutlineEnergySavingsLeaf, MdOutlineSecurity } from "react-icons/md";
+import { SiGraphql } from "react-icons/si";
+import { GoProject } from "react-icons/go";
+import { FaBookAtlas } from "react-icons/fa6";
+import { TbLogicNor, TbHexagonLetterC } from "react-icons/tb";
+import { PiGraph } from "react-icons/pi";
 import '../css/cv.css';
 
 const ICONS: Record<string, IconType> = {
@@ -10,9 +17,21 @@ const ICONS: Record<string, IconType> = {
   location: FaMapMarkerAlt,
   github: FaGithub,
   projects: FaFolderOpen,
-  python: FaPython,
-  java: FaJava,
-  javascript: IoLogoJavascript,
+  para: FcParallelTasks,
+  energy: MdOutlineEnergySavingsLeaf,
+  graph: SiGraphql,
+  analytics: IoAnalytics,
+  check: FaClipboardCheck,
+  database: FaDatabase,
+  robot: FaRobot,
+  warning: IoWarning,
+  project: GoProject,
+  book: FaBookAtlas,
+  logicNor: TbLogicNor,
+  android: FaAndroid,
+  graph2: PiGraph,
+  security: MdOutlineSecurity,
+  cHexa: TbHexagonLetterC,
 };
 
 export interface SideItem {
@@ -45,7 +64,6 @@ function CVSideBox({ title, items }: Props) {
 
   return (
     <section className="side-category">
-      {/* .h1 gives the heading the same line box as the main section headings, so the boxes line up */}
       <h2 className="h1 side-heading"><span>{title}</span></h2>
       <ul className="cv-box side-box">
         {visibleItems.map((item) => {

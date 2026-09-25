@@ -3,7 +3,7 @@ import SandcastleCustomizer from "../components/sandcastle/SandcastleCustomizer"
 
 function Home() {
   const titleMessage = "Hallo!"
-  const mainMessage = "Jeg er en master-student på mitt fjerde år på UiO, og studerer Programmering og Systemarkitektur (PROSA). Sjekk ut nettsiden min for å bli litt bedre kjent med meg!"
+  const mainMessage = "Jeg er en master-student på mitt femte år på UiO, og studerer Programmering og Systemarkitektur (PROSA). Sjekk ut nettsiden min for å bli litt bedre kjent med meg!"
 
   return (
     <div>

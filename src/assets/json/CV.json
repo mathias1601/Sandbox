@@ -110,6 +110,92 @@
           "href": "/Projects"
         }
       ]
+    },
+    {
+      "id": "emner",
+      "title": "Emner",
+      "items": [
+        {
+          "icon": "para",
+          "label": "IN4330",
+          "value": "Effektiv parallellprogrammering"
+        },
+        {
+          "icon": "energy",
+          "label": "IN5410",
+          "value": "Energiinformatikk"
+        },
+        {
+          "icon": "graph",
+          "label": "IN5020",
+          "value": "Distribuerte systemer"
+        },
+        {
+          "icon": "analytics",
+          "label": "IN5060",
+          "value": "Kvantitativ ytelsesanalyse"
+        },
+        {
+          "icon": "check",
+          "label": "IN5140",
+          "value": "Smarte prosesser og smidige metoder i systemutvikling"
+        },
+        {
+          "icon": "database",
+          "label": "IN3020",
+          "value": "Databasesystemer"
+        },
+        {
+          "icon": "robot",
+          "label": "IN3050",
+          "value": "Introduksjon til kunstig intelligens og maskinlæring"
+        },
+        {
+          "icon": "warning",
+          "label": "IN3240",
+          "value": "Testing av programvare"
+        },
+        {
+          "icon": "project",
+          "label": "IN2031",
+          "value": "Prosjektoppgave i programmering"
+        },
+        {
+          "icon": "book",
+          "label": "IN3040",
+          "value": "Programmeringsspråk"
+        },
+        {
+          "icon": "logicNor",
+          "label": "IN3070",
+          "value": "Logikk"
+        },
+        {
+          "icon": "android",
+          "label": "IN2000",
+          "value": "Software Engineering med prosjektarbeid"
+        },
+        {
+          "icon": "cHexa",
+          "label": "IN2140",
+          "value": "Introduksjon til operativsystemer og datakommunikasjon"
+        },
+        {
+          "icon": "graph2",
+          "label": "IN2010",
+          "value": "Algoritmer og datastrukturer"
+        },
+        {
+          "icon": "database",
+          "label": "IN2090",
+          "value": "Databaser og datamodellering"
+        },
+        {
+          "icon": "security",
+          "label": "IN2120",
+          "value": "Informasjonssikkerhet"
+        }
+      ]
     }
   ]
 }
